@@ -1,0 +1,50 @@
+.navbar__shadow{
+    box-shadow: 0 0.5rem 1rem #272929;
+}
+
+.navbar-brand{
+    font-size: 1.4rem;
+}
+
+.dropdown-item{
+    color: $fontColor;
+    font-size: 14px;
+}
+
+.navbar, .dropdown-menu{
+    text-align: center;
+    font-weight: bold;
+    border: $color1;
+    border-width: 1px;
+    border-style: groove;
+    background-color: $color4;
+}
+
+.navbar__select{
+    color: $color0;
+    border: $color1;
+    border-width: 1px;
+    border-style: solid;
+    background-color: $color2;
+}
+
+.navbar a{
+    padding: 0.5rem;
+    padding-inline: 4rem;
+    transition: 0.25s;
+}
+
+.navbar a:hover{
+    transform: scale(0.9);
+    background-color: $color3;
+    color: $fontColor;
+    text-decoration: none;
+}
+
+.navbar-collapse{
+    justify-content: space-around;
+}
+
+.navbar-toggler-icon{
+    background-image: url(../assets/hamburger1.png);
+}

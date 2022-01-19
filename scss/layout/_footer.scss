@@ -1,0 +1,67 @@
+.footer{
+    border: $color1;
+    border-width: 1px;
+    border-style: solid;
+    background-color: $color2;
+    color: $fontColor;
+    font-weight: bold;
+    border: $color1;
+    border-width: 1px;
+    border-style: groove;
+    background-color: $color4;
+    padding: 1rem;
+    box-shadow: 0 -0.5rem 1rem #272929;
+    padding-top: 2rem;
+}
+
+.btn{
+    margin-top: 1rem;
+    border: $color1;
+    border-width: 1px;
+    border-style: solid;
+    background-color: $color2;
+    color: $fontColor;
+    font-weight: bold;
+    border: $color1;
+    border-width: 1px;
+    border-style: groove;
+    background-color: $color3;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.footer a:hover{
+    text-decoration: none;
+    color: $fontColor;
+}
+
+.footer li{
+    padding: 0.5rem;
+    padding-inline: 4rem;
+    transition: 0.25s;
+}
+
+.footer li:hover{
+    transform: scale(0.9);
+    background-color: $color3;
+    color: $fontColor;
+}
+
+.footer img{
+    filter: invert(68%) sepia(33%) saturate(1704%) hue-rotate(139deg) brightness(97%) contrast(110%);
+}
+
+.form-control:focus{
+    transform: scaleY(1.1);
+    outline: none !important;
+    box-shadow: 0 0 10px $formShadow;
+    border: $color0 solid 2px;
+}
+
+.form-control{
+    transition: all 1s;
+}
+
+.newsletter-mail{
+    font-size: 1.4rem;
+}

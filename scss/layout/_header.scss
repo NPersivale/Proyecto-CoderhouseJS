@@ -1,0 +1,30 @@
+.header{
+    border: $color1;
+    border-width: 1px;
+    border-style: solid;
+    background-color: $color2;
+    color:$fontColor;
+    background: linear-gradient(270deg, $color2, $color3);
+    background-size: 400% 400%;
+    -webkit-animation: BGAnimation 10s ease infinite;
+    -moz-animation: BGAnimation 10s ease infinite;
+    animation: BGAnimation 10s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+
+@-webkit-keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

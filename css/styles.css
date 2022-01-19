@@ -1,0 +1,327 @@
+* {
+  Margin: 0;
+  Padding: 0; }
+
+* body {
+  background-color: #005F6B;
+  color: whitesmoke;
+  margin: 0px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; }
+
+html {
+  font-size: 62.5%; }
+
+.navbar__shadow {
+  box-shadow: 0 0.5rem 1rem #272929; }
+
+.navbar-brand {
+  font-size: 1.4rem; }
+
+.dropdown-item {
+  color: whitesmoke;
+  font-size: 14px; }
+
+.navbar, .dropdown-menu {
+  text-align: center;
+  font-weight: bold;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: groove;
+  background-color: #343838; }
+
+.navbar__select {
+  color: #00DFFC;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #008C9E; }
+
+.navbar a {
+  padding: 0.5rem;
+  padding-inline: 4rem;
+  transition: 0.25s; }
+
+.navbar a:hover {
+  transform: scale(0.9);
+  background-color: #005F6B;
+  color: whitesmoke;
+  text-decoration: none; }
+
+.navbar-collapse {
+  justify-content: space-around; }
+
+.navbar-toggler-icon {
+  background-image: url(../assets/hamburger1.png); }
+
+.header {
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  background: linear-gradient(270deg, #008C9E, #005F6B);
+  background-size: 400% 400%;
+  -webkit-animation: BGAnimation 10s ease infinite;
+  -moz-animation: BGAnimation 10s ease infinite;
+  animation: BGAnimation 10s ease infinite; }
+
+/* BACKGROUND ANIMATION */
+@-webkit-keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-moz-keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+.footer {
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  font-weight: bold;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: groove;
+  background-color: #343838;
+  padding: 1rem;
+  box-shadow: 0 -0.5rem 1rem #272929;
+  padding-top: 2rem; }
+
+.btn {
+  margin-top: 1rem;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  font-weight: bold;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: groove;
+  background-color: #005F6B;
+  padding: 0.5rem;
+  font-size: 1.4rem; }
+
+.footer a:hover {
+  text-decoration: none;
+  color: whitesmoke; }
+
+.footer li {
+  padding: 0.5rem;
+  padding-inline: 4rem;
+  transition: 0.25s; }
+
+.footer li:hover {
+  transform: scale(0.9);
+  background-color: #005F6B;
+  color: whitesmoke; }
+
+.footer img {
+  filter: invert(68%) sepia(33%) saturate(1704%) hue-rotate(139deg) brightness(97%) contrast(110%); }
+
+.form-control:focus {
+  transform: scaleY(1.1);
+  outline: none !important;
+  box-shadow: 0 0 10px #719ECE;
+  border: #00DFFC solid 2px; }
+
+.form-control {
+  transition: all 1s; }
+
+.newsletter-mail {
+  font-size: 1.4rem; }
+
+.carousel-caption {
+  background: rgba(45, 48, 49, 0.671);
+  border-radius: 0.5rem; }
+
+.btn {
+  margin-top: 1rem;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  font-weight: bold;
+  border: #00B4CC;
+  border-width: 1px;
+  border-style: groove;
+  background-color: #005F6B;
+  padding: 0.5rem;
+  font-size: 1.4rem; }
+
+textarea:focus {
+  transform: scaleY(1.1);
+  outline: none !important;
+  box-shadow: 0 0 10px #719ECE;
+  border: #00DFFC solid 2px; }
+
+input:focus {
+  transform: scale(1.1);
+  outline: none !important;
+  box-shadow: 0 0 10px #719ECE;
+  border: #00DFFC solid 2px; }
+
+.textarea__style {
+  display: block;
+  margin-bottom: 1rem; }
+
+.input__style--transition, .textarea__style--transition {
+  transition: all 1s; }
+
+.fieldset__style {
+  border: #00B4CC;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: groove;
+  background-color: #343838;
+  padding: 2rem; }
+
+.tableHeader {
+  border: #00B4CC;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  padding: 2rem;
+  margin: 2rem; }
+
+.scrollable {
+  height: 50rem;
+  overflow: auto; }
+
+.table__style--align {
+  text-align: center; }
+
+.table__style {
+  border: #00B4CC;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: groove;
+  background-color: #343838;
+  padding: 2rem; }
+
+.store__img {
+  object-fit: scale-down !important;
+  background-color: #00B4CC; }
+
+.btn {
+  background-color: #008C9E; }
+
+a {
+  text-decoration: none;
+  color: whitesmoke; }
+
+ul {
+  list-style: none; }
+
+.feed img {
+  border-radius: 0.5rem;
+  border: groove;
+  border-color: #00B4CC;
+  width: 100%;
+  height: 20rem;
+  max-width: 40rem;
+  max-height: 20rem;
+  object-fit: scale-down; }
+
+figcaption, .storeItem {
+  border: #00B4CC;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: groove;
+  background-color: #005F6B;
+  padding: 1rem; }
+
+.feed a:hover {
+  color: whitesmoke;
+  text-decoration: none; }
+
+.entry {
+  border: #00B4CC;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  border-style: solid;
+  background-color: #008C9E;
+  color: whitesmoke;
+  padding: 2rem;
+  margin: 2rem;
+  transition: 0.25s;
+  text-align: center; }
+
+.entry:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.25s; }
+
+.entry img {
+  object-fit: cover; }
+
+.feed {
+  padding: 2rem;
+  font-weight: bold;
+  border: #00B4CC;
+  border-width: 2px;
+  border-radius: 0.5rem;
+  border-style: groove;
+  background-color: #343838;
+  margin: 3rem; }
+
+.feed--align {
+  padding: 0;
+  margin: 0;
+  justify-content: space-evenly; }
+
+.entry:hover {
+  transform: scale(1.05); }
+
+/* BACKGROUND ANIMATION */
+body {
+  background: linear-gradient(270deg, #008C9E, #005F6B);
+  background-size: 400% 400%;
+  -webkit-animation: BGAnimation 10s ease infinite;
+  -moz-animation: BGAnimation 10s ease infinite;
+  animation: BGAnimation 10s ease infinite; }
+
+@-webkit-keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-moz-keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes BGAnimation {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }

@@ -1,0 +1,47 @@
+.btn{
+    margin-top: 1rem;
+    border: $color1;
+    border-width: 1px;
+    border-style: solid;
+    background-color: $color2;
+    color: $fontColor;
+    font-weight: bold;
+    border: $color1;
+    border-width: 1px;
+    border-style: groove;
+    background-color: $color3;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+}
+
+textarea:focus{
+    transform: scaleY(1.1);
+    outline: none !important;
+    box-shadow: 0 0 10px $formShadow;
+    border: $color0 solid 2px;
+}
+
+input:focus{
+    transform: scale(1.1);
+    outline: none !important;
+    box-shadow: 0 0 10px $formShadow;
+    border: $color0 solid 2px;
+}
+
+.textarea__style{
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.input__style--transition, .textarea__style--transition{
+    transition: all 1s;
+}
+
+.fieldset__style{
+    border: $color1;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: groove;
+    background-color: $color4;
+    padding: 2rem;
+}

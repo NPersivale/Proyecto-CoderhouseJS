@@ -1,0 +1,29 @@
+.tableHeader{
+    border: $color1;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    border-style: solid;
+    background-color: $color2;
+    color:$fontColor;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.scrollable{
+    height: 50rem;
+    overflow: auto;
+}
+
+.table__style--align{
+    text-align: center;
+}
+
+
+.table__style{
+    border: $color1;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: groove;
+    background-color: $color4;
+    padding: 2rem;
+}

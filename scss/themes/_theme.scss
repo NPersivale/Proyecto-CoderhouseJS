@@ -1,0 +1,106 @@
+// Color Palette: https://www.colourlovers.com/palette/482774/dream_magnet
+
+a{
+    text-decoration:none;
+    color: $fontColor;
+}
+
+ul{
+    list-style: none;
+}
+
+.feed img{
+    border-radius: 0.5rem;
+    border: groove;
+    border-color: $color1;
+    width: 100%;
+    height: 20rem;
+    max-width: 40rem;
+    max-height: 20rem;
+    object-fit: scale-down;
+}
+
+figcaption{
+    border: $color1;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: groove;
+    background-color: $color3;
+    padding: 1rem;
+}
+
+.feed a:hover{
+    color: $fontColor;
+    text-decoration: none;
+}
+
+.entry{
+    border: $color1;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    border-style: solid;
+    background-color: $color2;
+    color:$fontColor;
+    padding: 2rem;
+    margin: 2rem;
+    transition: 0.25s;
+    text-align: center;
+}
+
+.entry:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.25s;
+}
+
+.entry img{
+    object-fit: cover;
+}
+
+.feed{
+    padding: 2rem;
+    font-weight: bold;
+    border: $color1;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    border-style: groove;
+    background-color: $color4;
+    margin: 3rem;
+}
+
+.feed--align{
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+.entry:hover{
+    transform: scale(1.05)
+}
+
+
+/* BACKGROUND ANIMATION */
+
+body {
+    background: linear-gradient(270deg, $color2, $color3);
+    background-size: 400% 400%;
+
+    -webkit-animation: BGAnimation 10s ease infinite;
+    -moz-animation: BGAnimation 10s ease infinite;
+    animation: BGAnimation 10s ease infinite;
+}
+
+@-webkit-keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes BGAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

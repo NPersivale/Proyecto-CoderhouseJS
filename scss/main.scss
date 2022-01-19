@@ -1,0 +1,56 @@
+// VARIABLES
+
+$scheme: light; // choose "light" or "dark"
+$color0: #00DFFC;
+$color1: #00B4CC;
+$color2: #008C9E;
+$color3: #005F6B;
+$color4: #343838;
+$fontColor: whitesmoke;
+$formShadow: #719ECE;
+
+// COLORS (LIGHT TO DARK)
+@if $scheme == "light" {
+    $color0: #00DFFC;
+    $color1: #00B4CC;
+    $color2: #008C9E;
+    $color3: #005F6B;
+    $color4: #343838;
+    $fontColor: whitesmoke;
+    $formShadow: #719ECE;
+} @else if $scheme == "dark" {
+    $color0: #00DFFC;
+    $color1: #005F6B;
+    $color2: #343838;
+    $color3: black;
+    $color4: #212222;
+    $fontColor: whitesmoke;
+    $formShadow: #719ECE;
+}
+
+
+
+// IMPORT
+
+@import 'utilities/variables';
+@import 'utilities/functions';
+@import 'utilities/mixins';
+
+@import 'base/reset';
+@import 'base/typo';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/forms';
+
+@import 'components/carousel';
+
+@import 'views/home';
+@import 'views/contact';
+@import 'views/news';
+@import 'views/reviews';
+@import 'views/store';
+
+@import 'themes/theme';
