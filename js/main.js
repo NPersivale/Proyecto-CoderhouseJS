@@ -1,4 +1,25 @@
 // *******************************************************
+// CLASSES
+// *******************************************************
+
+class storeProduct {
+    constructor(id, name, price, image){
+        this.id = id;
+        this.name = name;
+        this.price = parseFloat(price);
+        this.image = image;
+    }
+}
+
+class shoppingCartProd {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+}
+
+
+// *******************************************************
 // CODE
 // *******************************************************
 
@@ -69,29 +90,8 @@ function createProduct(productsArray) {
 }
 
 
-function addToCart(){ // funciona parcialmente!
-    console.log("Click");
+function addToCart(){ // no funciona!
     let addItem = document.getElementsByClassName("storeBtn")[0].parentElement.querySelectorAll(".priceProd, .h2Prod");
     shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML));
-}
-
-
-// *******************************************************
-// CLASSES
-// *******************************************************
-
-class storeProduct {
-    constructor(id, name, price, image){
-        this.id = id;
-        this.name = name;
-        this.price = parseFloat(price);
-        this.image = image;
-    }
-}
-
-class shoppingCartProd {
-    constructor(name, price){
-        this.name = name;
-        this.price = price;
-    }
+    console.log(shoppingCart);
 }
