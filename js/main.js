@@ -1,15 +1,6 @@
 // *******************************************************
-// CLASSES
+// CODE
 // *******************************************************
-
-class storeProduct {
-    constructor(id, name, price, image){
-        this.id = id;
-        this.name = name;
-        this.price = parseFloat(price);
-        this.image = image;
-    }
-}
 
 const productsArray = [];
 
@@ -25,7 +16,7 @@ createProduct(productsArray);
 
 
 // *******************************************************
-// JSON FILE - no funciona!
+// JSON FILE to localStorage - no funciona!
 // *******************************************************
 
 // const saveLocally = (key, value) => {localStorage.setItem(key, value)};
@@ -78,13 +69,29 @@ function createProduct(productsArray) {
 }
 
 
-function addToCart(event){ // no funciona!
+function addToCart(){ // funciona parcialmente!
     console.log("Click");
-    let addProduct = event.target;
-    console.log(addProduct);
-    let h2Prod = document.getElementsByClassName("h2Prod").innerText;
-    console.log(h2Prod);
-    let priceProd = document.getElementsByClassName("priceProd").innerText;
-    console.log(priceProd);
-    // shoppingCart.push(event.target.);
+    let addItem = document.getElementsByClassName("storeBtn")[0].parentElement.querySelectorAll(".priceProd, .h2Prod");
+    shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML));
+}
+
+
+// *******************************************************
+// CLASSES
+// *******************************************************
+
+class storeProduct {
+    constructor(id, name, price, image){
+        this.id = id;
+        this.name = name;
+        this.price = parseFloat(price);
+        this.image = image;
+    }
+}
+
+class shoppingCartProd {
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
 }
