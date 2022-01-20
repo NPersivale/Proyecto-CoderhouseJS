@@ -19,6 +19,7 @@ class shoppingCartProd {
 }
 
 
+
 // *******************************************************
 // CODE
 // *******************************************************
@@ -26,34 +27,15 @@ class shoppingCartProd {
 const productsArray = [];
 
 // Store products - Object instances
-productsArray.push(new storeProduct(1, "iRacing Hoodie", 60, "../assets/Store/hoodie-iracing.jpg"));
-productsArray.push(new storeProduct(2, "iRacing T-Shirt", 30, "../assets/Store/tshirt-iracing.jpg"));
-productsArray.push(new storeProduct(3, "Escape From Tarkov T-Shirt", 30, "../assets/Store/tshirt-eft.jpg"));
-productsArray.push(new storeProduct(4, "Star Citizen Backpack", 70, "../assets/Store/SC-backpack.jpg"));
+productsArray.push(new storeProduct(0, "iRacing Hoodie", 60, "../assets/Store/hoodie-iracing.jpg"));
+productsArray.push(new storeProduct(1, "iRacing T-Shirt", 30, "../assets/Store/tshirt-iracing.jpg"));
+productsArray.push(new storeProduct(2, "Escape From Tarkov T-Shirt", 30, "../assets/Store/tshirt-eft.jpg"));
+productsArray.push(new storeProduct(3, "Star Citizen Backpack", 70, "../assets/Store/SC-backpack.jpg"));
 
 
 let storeFeed = document.getElementById("storeFeed");
 createProduct(productsArray);
 
-
-// *******************************************************
-// JSON FILE to localStorage - no funciona!
-// *******************************************************
-
-// const saveLocally = (key, value) => {localStorage.setItem(key, value)};
-
-// for (const prod of productsArray) {
-//     saveLocally(prod.id, JSON.stringify(prod));
-// }
-
-// const locally = JSON.parse(localStorage.getItem("listofProducts"));
-// const productsLocal = [];
-
-// for(const objeto of locally){
-//     productsLocal.push(new Producto(objeto));
-// }
-
-// console.log(productsLocal);
 
 
 // *******************************************************
@@ -63,15 +45,47 @@ createProduct(productsArray);
 const shoppingCart = [];
 
 let storeBtn = document.getElementsByClassName("storeBtn");
-for (var i = 0 ; i < storeBtn.length; i++) {
-    storeBtn[i].addEventListener('click' , addToCart) ; 
+for (let  index = 0 ; index < storeBtn.length; index++) {
+    storeBtn[index].addEventListener('click' , addToCart) ; 
 }
-console.log(shoppingCart);
+console.log(shoppingCart); //TESTING PURPOSES ONLY
+
+
+let saveBtn = document.getElementById("saveBtn");
+saveBtn.addEventListener("click",saveCart);
+
+
+let recoverBtn = document.getElementById("recoverBtn");
+recoverBtn.addEventListener("click",recoverCart);
+
+
+let clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click",resetStorage);
+
 
 
 // *******************************************************
 // FUNCTIONS
 // *******************************************************
+
+const saveLocally = (key, value) => { localStorage.setItem(key, value) };
+
+function saveCart(){ //ALMOACENA EL CARRITO ACTUAL EN EL LOCALSTORAGE
+    saveLocally("shoppingCartLocal", JSON.stringify(shoppingCart));
+}
+
+function resetStorage(){ //LIMPIA EL LOCALSTORAGE
+    localStorage.clear();
+}
+
+function recoverCart(){ //RECUPERA EL CARRITO DEL LOCALSTORAGE
+    const storedProducts = JSON.parse(localStorage.getItem("shoppingCartLocal"));
+    const recoveredProducts = [];
+    for (const product of storedProducts){
+        recoveredProducts.push(new shoppingCartProd(product.name, product.price));
+    }
+    console.log(recoveredProducts); //TESTING PURPOSES ONLY
+}
 
 function createProduct(productsArray) {
     for(products of productsArray){
@@ -82,7 +96,7 @@ function createProduct(productsArray) {
             <h2 class="h2Prod" >${products.name}</h2>
             <img class="store__img" src=\"${products.image}">
             <h3 class="priceProd" >Price: ${products.price}</h3>
-            <input class="btn storeBtn" type="submit" value="Add to Cart">
+            <input class="btn storeBtn" id="${products.id}" type="submit" value="Add to Cart">
         </div>
         `;
         storeFeed.appendChild(div);
@@ -90,8 +104,9 @@ function createProduct(productsArray) {
 }
 
 
-function addToCart(){ // no funciona!
-    let addItem = document.getElementsByClassName("storeBtn")[0].parentElement.querySelectorAll(".priceProd, .h2Prod");
-    shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML));
-    console.log(shoppingCart);
+function addToCart(event){
+    let targetId = event.target.id;
+    let addItem = document.getElementsByClassName("storeBtn")[targetId].parentElement.querySelectorAll(".priceProd, .h2Prod");
+    shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML.replace(/[^0-9]/g,'')));
+    console.log(shoppingCart); //TESTING PURPOSES ONLY
 }
