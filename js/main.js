@@ -103,6 +103,7 @@ function createProduct(productsArray) {
                 <input class="prodGame" value="${products.game}" type="hidden">
                 <input class="prodColor" value="${products.color}" type="hidden">
                 <input class="btn storeBtn" id="${products.id}" type="submit" value="Add to Cart">
+                <h3 style="display: none" id="${products.id}prodAdded">Agregado!</h3>
             </div>
         </div>`);
     }
@@ -111,7 +112,18 @@ function createProduct(productsArray) {
 
 function addToCart(event){
     let targetId = event.target.id;
-    let addItem = document.getElementsByClassName("storeBtn")[targetId].parentElement.querySelectorAll(".prodPrice, .prodH2, .prodType, .prodGame, .prodColor");
+    let addItem = document.getElementsByClassName("storeBtn")[targetId].parentElement.querySelectorAll(".prodPrice, .prodH2, .prodType, .prodGame, .prodColor, .prodAdded");
     shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML.replace(/[^0-9]/g,''), addItem[2].value, addItem[3].value, addItem[4].value));
     console.log(shoppingCart); //TESTING PURPOSES ONLY
+    $("#"+ targetId + "prodAdded").fadeIn().fadeOut(1000);
 }
+
+
+// *******************************************************
+// ANIMATIONS
+// *******************************************************
+
+$(`#navbarDropdownMenuLink`).hover(function(){
+    $(`.dropdown-menu`).slideToggle("fast");
+})
+
