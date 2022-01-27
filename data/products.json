@@ -1,0 +1,92 @@
+[
+    {
+        "color": "Gray",
+        "game": "iRacing",
+        "id": 0,
+        "image": "../assets/Store/hoodie-iracing.jpg",
+        "name": "iRacing Hoodie",
+        "price": 59.99,
+        "prodType": "Apparel"
+    },
+    {
+        "color": "Gray",
+        "game": "iRacing",
+        "id": 1,
+        "image": "../assets/Store/tshirt-iracing.jpg",
+        "name": "iRacing T-Shirt",
+        "price": 29.99,
+        "prodType": "Apparel"
+    },
+    {
+    "color": "Black",
+    "game": "EFT",
+    "id": 2,
+    "image": "../assets/Store/tshirt-eft.jpg",
+    "name": "Escape From Tarkov T-Shirt",
+    "price": 29.99,
+    "prodType": "Apparel"
+    },
+    {
+    "color": "Black",
+    "game": "Star Citizen",
+    "id": 3,
+    "image": "../assets/Store/SC-backpack.jpg",
+    "name": "Star Citizen Backpack",
+    "price": 69.99,
+    "prodType": "Luggage"
+    },
+    {
+        "color": "Black",
+        "game": "EFT",
+        "id": 4,
+        "image": "../assets/Store/labsmug-eft.png",
+        "name": "EFT Labs Mug",
+        "price": 24.99,
+        "prodType": "Drinkware"
+    },
+    {
+        "color": "Black",
+        "game": "EFT",
+        "id": 5,
+        "image": "../assets/Store/killamug-eft.png",
+        "name": "EFT Killa Mug",
+        "price": 34.99,
+        "prodType": "Drinkware"
+    },
+    {
+        "color": "Clear",
+        "game": "Star Citizen",
+        "id": 6,
+        "image": "../assets/Store/collectorsdrinkset-SC.png",
+        "name": "Star Citizen Collerctors Drink Set",
+        "price": 94.99,
+        "prodType": "Drinkware"
+    },
+    {
+        "color": "Black",
+        "game": "Star Citizen",
+        "id": 7,
+        "image": "../assets/Store/stainlessmug-SC.png",
+        "name": "Star Citizen Stainless Steel Mug",
+        "price": 24.99,
+        "prodType": "Drinkware"
+    },
+    {
+        "color": "White",
+        "game": "Star Citizen",
+        "id": 8,
+        "image": "../assets/Store/rsimug-SC.png",
+        "name": "Robert Space Industries Mug",
+        "price": 24.99,
+        "prodType": "Drinkware"
+    },
+    {
+        "color": "Stainless Steel",
+        "game": "iRacing",
+        "id": 9,
+        "image": "../assets/Store/30oztumbler-iracing.png",
+        "name": "iRacing 30 OZ Tumbler",
+        "price": 34.99,
+        "prodType": "Drinkware"
+    }
+]
