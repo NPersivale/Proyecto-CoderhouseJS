@@ -40,7 +40,7 @@
         "game": "EFT",
         "id": 4,
         "image": "../assets/Store/labsmug-eft.png",
-        "name": "EFT Labs Mug",
+        "name": "Escape From Tarkov Labs Mug",
         "price": 24.99,
         "prodType": "Drinkware"
     },
@@ -49,7 +49,7 @@
         "game": "EFT",
         "id": 5,
         "image": "../assets/Store/killamug-eft.png",
-        "name": "EFT Killa Mug",
+        "name": "Escape From Tarkov Killa Mug",
         "price": 34.99,
         "prodType": "Drinkware"
     },

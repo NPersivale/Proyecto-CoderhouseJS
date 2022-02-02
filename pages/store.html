@@ -56,15 +56,24 @@
 
     <!-- CONTENT -->
     <section id="store" class="feed">
-        <h1>Merch Store:</h1>
-        <div id="storeFeed" class="feed--align container-fluid row">
-            
+        <div class="d-flex">
+            <div id="sideMenu" class="col-2">
+                <div id="storeFilters" class="flex-column m-3">
+                </div>
+                <div class="flex-column m-2">
+                    <input class="btn w-100 d-sm-inline-flex p-3" id="saveBtn" type="submit" value="Save Cart For Later">
+                    <input class="btn w-100 d-sm-inline-flex p-3" id="recoverBtn" type="submit" value="Recover Cart">
+                    <input class="btn w-100 d-sm-inline-flex p-3" id="clearBtn" type="submit" value="Clear Cart">
+                </div>
+
+            </div>
+            <div class="col-10">
+                <h1>Merch Store:</h1>
+                <div id="storeFeed" class="feed--align container-fluid row">
+                </div>
+            </div>
         </div>
-        <div class="container-fluid d-flex justify-content-around">
-            <input class="btn col-3" id="saveBtn" type="submit" value="Save Cart For Later">
-            <input class="btn col-3" id="recoverBtn" type="submit" value="Recover Cart">
-            <input class="btn col-3" id="clearBtn" type="submit" value="Clear Cart">
-        </div>
+
     </section>
     
     <!-- footer -->

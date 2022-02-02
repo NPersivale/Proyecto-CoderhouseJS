@@ -169,6 +169,31 @@ html {
   padding: 0.5rem;
   font-size: 1.4rem; }
 
+#storeFilters {
+  padding-bottom: 3rem;
+}
+
+  .storeSubFilters {
+    margin-top: 1rem;
+    border: #00B4CC;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #00B4CC;
+    color: whitesmoke;
+    font-weight: bold;
+    border: #00B4CC;
+    border-width: 1px;
+    border-style: groove;
+    background-color: #008C9E;
+    padding: 0.5rem;
+    font-size: 1.4rem; }
+
+    .storeSubFilters ul {
+      margin-top: 1rem;
+      background-color: #00B4CC;
+      padding: 1rem;
+}
+
 textarea:focus {
   transform: scaleY(1.1);
   outline: none !important;
@@ -272,6 +297,19 @@ figcaption, .storeItem {
 .entry:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.25s; }
+
+  #sideMenu {
+    border: #00B4CC;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    border-style: solid;
+    background-color: #005F6B;
+    color: whitesmoke;
+    padding: 1rem;
+    margin: 1rem;
+    transition: 0.25s;
+    text-align: center; }
+
 
 .entry img {
   object-fit: cover; }

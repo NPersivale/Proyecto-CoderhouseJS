@@ -77,7 +77,7 @@ function createProduct(products) {
             <div class="storeItem">
                 <h2 class="prodH2" >${product.name}</h2>
                 <img class="store__img" src=\"${product.image}">
-                <h3 class="prodPrice" >Price: ${product.price}</h3>
+                <h3 class="prodPrice" >Price: $${product.price}</h3>
                 <input class="prodType" value="${product.prodType}" type="hidden">
                 <input class="prodGame" value="${product.game}" type="hidden">
                 <input class="prodColor" value="${product.color}" type="hidden">
@@ -88,6 +88,63 @@ function createProduct(products) {
         `);
     }
 }
+
+$("#storeFilters").append(`
+    <h2>Store Filters</h2>
+    <div class="flex-row storeSubFilters">
+        <h3>Filter by game:</h3>
+        <ul>
+            <li><input type="checkbox" class="checkboxFilter filterByGame" name="EFTGame" value="EFT"><label for="EFTGame">EFT</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByGame" name="SCGame" value="Star Citizen"><label for="SCGame">Star Citizen</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByGame" name="IRGame" value="iRacing"><label for="IRGame">iRacing</label></li>
+        </ul>
+    </div>
+    <div class="flex-row storeSubFilters">
+        <h3>Filter by Color:</h3>
+        <ul>
+            <li><input type="checkbox" class="checkboxFilter filterByColor" name="blackColor" value="Black"><label for="blackColor">Black</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByColor" name="grayColor" value="Gray"><label for="grayColor">Gray</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByColor" name="whiteColor" value="White"><label for="whiteColor">White</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByColor" name="clearColor" value="Clear"><label for="clearColor">Clear</label></li>
+        </ul>
+    </div>
+    <div class="flex-row storeSubFilters">
+        <h3>Filter by Product Type:</h3>
+        <ul>
+            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeDrinkware" value="Drinkware"><label for="typeDrinkware">Drinkware</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeApparel" value="Apparel"><label for="typeApparel">Apparel</label></li>
+            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeLuggage" value="Luggage"><label for="typeLuggage">Luggage</label></li>
+        </ul>
+    </div>
+`);
+
+// *******************************************************
+// WIP
+// *******************************************************
+
+$(`.checkboxFilter`).change( 
+    function(event){
+        $(`#storeFeed`). empty();
+        const checkedBox = [];
+        $.each($("input:checkbox:checked"), function (){
+            checkedBox.push($(this).val());
+        })
+        $.getJSON(URLproducts, function (answer, status) {
+            if(status === "success"){
+                for(filter of checkedBox){
+                    filtered = answer.filter(product => product.game === filter || product.color === filter || product.prodType === filter);
+                    createProduct(filtered);
+                }
+            };
+            if(checkedBox.length == 0){
+                $.getJSON(URLproducts, function (answer, status) {
+                    if(status === "success"){
+                        createProduct(answer);
+                    }
+                })
+            }
+        })
+    })
 
 
 function addToCart(event){
