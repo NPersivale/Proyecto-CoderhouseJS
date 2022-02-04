@@ -118,8 +118,9 @@ $("#storeFilters").append(`
     </div>
 `);
 
+
 // *******************************************************
-// WIP
+// STORE FILTER - WIP
 // *******************************************************
 
 $(`.checkboxFilter`).change( 
@@ -133,6 +134,10 @@ $(`.checkboxFilter`).change(
             if(status === "success"){
                 for(filter of checkedBox){
                     filtered = answer.filter(product => product.game === filter || product.color === filter || product.prodType === filter);
+                    // for(let index = 1; index <= checkedBox.length; index++){
+                    //     console.log(index);
+                    // }
+                    // createProduct(filtered);
                     createProduct(filtered);
                 }
             };

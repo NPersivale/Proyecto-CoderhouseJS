@@ -12,6 +12,7 @@
 html {
   font-size: 62.5%; }
 
+
 .navbar__shadow {
   box-shadow: 0 0.5rem 1rem #272929; }
 
@@ -30,6 +31,22 @@ html {
   border-style: groove;
   background-color: #343838; }
 
+.shoppingCart {
+  position:fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  max-height: 90%;
+  overflow-y:auto;
+}
+
+.closeBtn{
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
 .navbar__select {
   color: #00DFFC;
   border: #00B4CC;
@@ -38,6 +55,7 @@ html {
   background-color: #008C9E; }
 
 .navbar a {
+  margin-top: 1rem;
   padding: 0.5rem;
   padding-inline: 4rem;
   transition: 0.25s; }
