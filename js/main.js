@@ -46,16 +46,49 @@ $(`.nav-cart`).ready(()=>{ //CREATES CART STRUCTURE
             </div>
     </div>
 
-    <input class="btn w-30 d-sm-inline-flex p-3" id="clearBtn" type="submit" value="Clear Cart"> (NOT WORKING YET)
+    <button class="btn w-30" id="deleteCart" type="submit">Delete Cart</button>
+    <button class="btn w-30" id="checkOut" type="submit">Checkout</button>
+    <div id="popUp">
+        <div class="entry">
+            <h3>Congratulations!</h3>
+            <p>Your purchase is on its way!</p>
+            <p>Thank you for supporting us.</p>
+        </div>
+        <button class="btn" id="okBtn" type="submit" onclick="hidePopup();">Ok</button>
+    </div>
     `
     );
 })
 
+function showPopup() {
+    $("#popUp").before('<div id=grayBack></div>');
+    $("#grayBack").css('opacity', 0).fadeTo(300, 0.5, function() {
+        $("#popUp").fadeIn(500);
+    });
+}
+
+function hidePopup() {
+    $("#grayBack").fadeOut('fast', function() {
+        $(this).remove()
+    });
+    $("#popUp").fadeOut('fast', function() {
+        $(this).hide()
+    });
+}
+
 $(`.nav-cart`).click(()=>{ //TOGGLES SHOPPING CART
-    index1++;
     $(`.shoppingCart`).slideDown(function(){
         $(`.closeBtn`).click(()=>{
             $(`.shoppingCart`).slideUp();
         });
+    })
+    $(`#deleteCart`).click(()=>{
+        $(`#containerCart`).empty();
+        shoppingCart.length = 0;
+    })
+
+    $(`#checkOut`).click(()=>{
+        showPopup();
+        console.log("checkout!");
     })
 })

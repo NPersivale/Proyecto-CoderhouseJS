@@ -404,3 +404,20 @@ body {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+
+#okBtn{
+  padding: 2rem;
+  width: 15rem;
+  border-radius: 1rem;
+}
+
+#popUp {
+  display: none;
+  width: 52rem;
+  height: 20rem;
+  z-index: 100;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #005F6B;
+}

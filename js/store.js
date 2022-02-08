@@ -59,68 +59,6 @@ function createProduct(products) {
     }
 }
 
-$("#storeFilters").append(`
-    <h2>Store Filters</h2>
-    <div class="flex-row storeSubFilters">
-        <h3>Filter by game:</h3>
-        <ul>
-            <li><input type="checkbox" class="checkboxFilter filterByGame" name="EFTGame" value="EFT"><label for="EFTGame">EFT</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByGame" name="SCGame" value="Star Citizen"><label for="SCGame">Star Citizen</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByGame" name="IRGame" value="iRacing"><label for="IRGame">iRacing</label></li>
-        </ul>
-    </div>
-    <div class="flex-row storeSubFilters">
-        <h3>Filter by Color:</h3>
-        <ul>
-            <li><input type="checkbox" class="checkboxFilter filterByColor" name="blackColor" value="Black"><label for="blackColor">Black</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByColor" name="grayColor" value="Gray"><label for="grayColor">Gray</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByColor" name="whiteColor" value="White"><label for="whiteColor">White</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByColor" name="clearColor" value="Clear"><label for="clearColor">Clear</label></li>
-        </ul>
-    </div>
-    <div class="flex-row storeSubFilters">
-        <h3>Filter by Product Type:</h3>
-        <ul>
-            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeDrinkware" value="Drinkware"><label for="typeDrinkware">Drinkware</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeApparel" value="Apparel"><label for="typeApparel">Apparel</label></li>
-            <li><input type="checkbox" class="checkboxFilter filterByProdType" name="typeLuggage" value="Luggage"><label for="typeLuggage">Luggage</label></li>
-        </ul>
-    </div>
-`);
-
-
-// *******************************************************
-// STORE FILTER - WIP
-// *******************************************************
-
-$(`.checkboxFilter`).change( 
-    function(event){
-        $(`#storeFeed`). empty();
-        const checkedBox = [];
-        $.each($("input:checkbox:checked"), function (){
-            checkedBox.push($(this).val());
-        })
-        $.getJSON(URLproducts, function (answer, status) {
-            if(status === "success"){
-                for(filter of checkedBox){
-                    filtered = answer.filter(product => product.game === filter || product.color === filter || product.prodType === filter);
-                    // for(let index = 1; index <= checkedBox.length; index++){
-                    //     console.log(index);
-                    // }
-                    // createProduct(filtered);
-                    createProduct(filtered);
-                }
-            };
-            if(checkedBox.length == 0){
-                $.getJSON(URLproducts, function (answer, status) {
-                    if(status === "success"){
-                        createProduct(answer);
-                    }
-                })
-            }
-        })
-    })
-
 
 // *******************************************************
 // SHOPPING CART FUNCTIONALITY - WIP
@@ -131,6 +69,8 @@ $(`#recoverBtn`).on('click', getStorage);
 $(`#clearBtn`).on('click', resetStorage);
 $(`#saveBtn`).on('click', setStorage);
 
+
+
 const saveLocally = (key, value) => { localStorage.setItem(key, value) };
 
 function setStorage(){ //STORES CART IN LOCALSTORAGE
@@ -138,7 +78,7 @@ function setStorage(){ //STORES CART IN LOCALSTORAGE
 }
 
 function resetStorage(){ //CLEARS LOCALSTORAGE
-    $(`#containerCart`).empty(); //NOT WORKING
+    $(`#containerCart`).empty();
     localStorage.clear();
     console.log("localStorage has been cleared!"); //TESTING PURPOSES ONLY
 }
@@ -152,38 +92,37 @@ function getStorage(){ //RETRIEVES CART FROM LOCALSTORAGE
     console.log(recoveredProducts); //TESTING PURPOSES ONLY
 }
 
+function renderCart(product){ // RENDERS CART
+    $(`#containerCart`).append(`        
+    <tr>
+        <td>${product.units}</td>
+        <td>${product.name}</td>
+        <td>${"$ " + product.price}</td>
+        <td>${"$ " + product.price*product.units}</td>                
+        <td><button id="btnDel${product.id}" class="removeItem btn">X</button></td>
+    </tr>`);
+}
 
-function addToCart(event){
+
+$(`.removeItem`).click(()=>{ // NOT WORKING
+    console.log("click");
+})
+
+function addToCart(event){ // LISTENS TO "ADD TO CART" BUTTON
     const targetId = event.target.id;
     let addItem = document.getElementsByClassName("storeBtn")[targetId].parentElement.querySelectorAll(".prodH2, .prodPrice, .prodType, .prodGame, .prodColor, .prodAdded, .prodId");
     console.log(shoppingCart); //TESTING PURPOSES ONLY
     $("#"+ targetId + "prodAdded").fadeIn().fadeOut(1000);
-
-    console.log("targetId is: " + targetId);
 
     if (shoppingCart.some(product => product.id === targetId)) {
         const chosenProduct = shoppingCart.find(product => product.id === targetId);
         chosenProduct.units++;
         $(`#containerCart`).empty();
         for(product of shoppingCart){
-            $(`#containerCart`).append(`        
-            <tr>
-                <td>${product.units}</td>
-                <td>${product.name}</td>
-                <td>${"$ " + product.price}</td>
-                <td>${"$ " + product.price*product.units}</td>                
-                <td><button id="btnDel${product.id}" class="remove btn">X</button></td>
-            </tr>`);
+            renderCart(product);
         }
         } else {
             shoppingCart.push(new shoppingCartProd(addItem[0].innerHTML, addItem[1].innerHTML.replace(/[^0-9]/g,''), addItem[2].value, addItem[3].value, addItem[4].value, addItem[5].value, 1));
             const chosenProduct = shoppingCart.find(product => product.id === targetId);
-            $(`#containerCart`).append(`        
-            <tr>
-                <td>${chosenProduct.units}</td>
-                <td>${chosenProduct.name}</td>
-                <td>${"$ " + chosenProduct.price}</td>
-                <td>${"$ " + chosenProduct.price*chosenProduct.units}</td>                
-                <td><button id="btnDel${chosenProduct.id}" class="remove btn">X</button></td>
-            </tr>`);
+            renderCart(chosenProduct);
         }}
