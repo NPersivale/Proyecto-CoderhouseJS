@@ -5,7 +5,7 @@
         "id": 0,
         "image": "../assets/Store/hoodie-iracing.jpg",
         "name": "iRacing Hoodie",
-        "price": 59.99,
+        "price": 60,
         "prodType": "Apparel"
     },
     {
@@ -14,7 +14,7 @@
         "id": 1,
         "image": "../assets/Store/tshirt-iracing.jpg",
         "name": "iRacing T-Shirt",
-        "price": 29.99,
+        "price": 30,
         "prodType": "Apparel"
     },
     {
@@ -23,7 +23,7 @@
     "id": 2,
     "image": "../assets/Store/tshirt-eft.jpg",
     "name": "Escape From Tarkov T-Shirt",
-    "price": 29.99,
+    "price": 90,
     "prodType": "Apparel"
     },
     {
@@ -32,7 +32,7 @@
     "id": 3,
     "image": "../assets/Store/SC-backpack.jpg",
     "name": "Star Citizen Backpack",
-    "price": 69.99,
+    "price": 70,
     "prodType": "Luggage"
     },
     {
@@ -41,7 +41,7 @@
         "id": 4,
         "image": "../assets/Store/labsmug-eft.png",
         "name": "Escape From Tarkov Labs Mug",
-        "price": 24.99,
+        "price": 25,
         "prodType": "Drinkware"
     },
     {
@@ -50,7 +50,7 @@
         "id": 5,
         "image": "../assets/Store/killamug-eft.png",
         "name": "Escape From Tarkov Killa Mug",
-        "price": 34.99,
+        "price": 35,
         "prodType": "Drinkware"
     },
     {
@@ -59,7 +59,7 @@
         "id": 6,
         "image": "../assets/Store/collectorsdrinkset-SC.png",
         "name": "Star Citizen Collerctors Drink Set",
-        "price": 94.99,
+        "price": 95,
         "prodType": "Drinkware"
     },
     {
@@ -68,7 +68,7 @@
         "id": 7,
         "image": "../assets/Store/stainlessmug-SC.png",
         "name": "Star Citizen Stainless Steel Mug",
-        "price": 24.99,
+        "price": 25,
         "prodType": "Drinkware"
     },
     {
@@ -77,7 +77,7 @@
         "id": 8,
         "image": "../assets/Store/rsimug-SC.png",
         "name": "Robert Space Industries Mug",
-        "price": 24.99,
+        "price": 25,
         "prodType": "Drinkware"
     },
     {
@@ -86,7 +86,7 @@
         "id": 9,
         "image": "../assets/Store/30oztumbler-iracing.png",
         "name": "iRacing 30 OZ Tumbler",
-        "price": 34.99,
+        "price": 35,
         "prodType": "Drinkware"
     }
 ]

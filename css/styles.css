@@ -31,12 +31,33 @@ html {
   border-style: groove;
   background-color: #343838; }
 
-.shoppingCart {
+.shoppingCart{
   position:fixed;
   top: 0.5rem;
   right: 0.5rem;
   max-height: 90%;
   overflow-y:auto;
+}
+
+.shoppingCart {
+  border: #00B4CC;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  border-style: solid;
+  background-color: #343838;
+  color: whitesmoke;
+  padding: 2rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+.shoppingCart div{
+  width: 50rem;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+  margin: 1rem;
+  background-color: #00B4CC;
+
 }
 
 .closeBtn{
@@ -299,6 +320,8 @@ figcaption, .storeItem {
 .feed a:hover {
   color: whitesmoke;
   text-decoration: none; }
+
+
 
 .entry {
   border: #00B4CC;

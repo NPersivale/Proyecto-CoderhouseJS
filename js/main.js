@@ -3,7 +3,7 @@
 // *******************************************************
 
 $(() => {
-    console.log("El DOM esta listo");
+    console.log("The DOM is ready");
 });
 
 
@@ -22,26 +22,40 @@ $(`#navbarDropdownMenuLink`).click(function(){
 
 let index1 = 0;
 
-$(`.nav-cart`).ready(()=>{
+$(`.nav-cart`).ready(()=>{ //CREATES CART STRUCTURE
     $(`.shoppingCart`).append(
-        `<div class="">
+        `<div class="containerProducts">
             <h1>Shopping Cart:</h1>
             <h5 class="closeBtn btn">x</h5>
-        </div>`
+        </div>
+        <div class="container d-flex justify-content-around row m-auto my-5">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Units</th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody id="containerCart">              
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+    <input class="btn w-30 d-sm-inline-flex p-3" id="clearBtn" type="submit" value="Clear Cart"> (NOT WORKING YET)
+    `
     );
 })
 
-$(`.nav-cart`).click(()=>{
+$(`.nav-cart`).click(()=>{ //TOGGLES SHOPPING CART
     index1++;
     $(`.shoppingCart`).slideDown(function(){
         $(`.closeBtn`).click(()=>{
             $(`.shoppingCart`).slideUp();
         });
     })
-    $(`.shoppingCart`).append(
-        `<div class="w-100">
-            <h2>${"Hola! Tocaste el boton "+ index1 + " veces!"}</h2>
-        </div>`
-    )
 })
-
