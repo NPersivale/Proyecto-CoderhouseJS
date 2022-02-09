@@ -36,8 +36,6 @@ $("#storeFeed").ready(() => {
 
 
 const shoppingCart = [];
-console.log(shoppingCart); //TESTING PURPOSES ONLY
-
 function createProduct(products) {
     for(product of products){
         $("#storeFeed").append(`
@@ -52,7 +50,6 @@ function createProduct(products) {
                 <input class="prodId" value="${product.id}" type="hidden">
                 <input class="btn storeBtn" id="${product.id}" type="submit" value="Add to Cart">
                 <h3 style="display: none" id="${product.id}prodAdded">Agregado!</h3>
-
             </div>
         </div>
         `);
@@ -64,7 +61,7 @@ function createProduct(products) {
 // SHOPPING CART FUNCTIONALITY - WIP
 // *******************************************************
 
-// CART BUTTONS - TEMPORAL
+// STORAGE BUTTONS - TEMPORAL (TESTING ONLY)
 $(`#recoverBtn`).on('click', getStorage);
 $(`#clearBtn`).on('click', resetStorage);
 $(`#saveBtn`).on('click', setStorage);
@@ -101,12 +98,9 @@ function renderCart(product){ // RENDERS CART
         <td>${"$ " + product.price*product.units}</td>                
         <td><button id="btnDel${product.id}" class="removeItem btn">X</button></td>
     </tr>`);
+
+    $(`.removeItem`).click(removeItem);
 }
-
-
-$(`.removeItem`).click(()=>{ // NOT WORKING
-    console.log("click");
-})
 
 function addToCart(event){ // LISTENS TO "ADD TO CART" BUTTON
     const targetId = event.target.id;

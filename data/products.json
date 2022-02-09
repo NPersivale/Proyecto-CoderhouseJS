@@ -18,22 +18,22 @@
         "prodType": "Apparel"
     },
     {
-    "color": "Black",
-    "game": "EFT",
-    "id": 2,
-    "image": "../assets/Store/tshirt-eft.jpg",
-    "name": "Escape From Tarkov T-Shirt",
-    "price": 90,
-    "prodType": "Apparel"
+        "color": "Black",
+        "game": "EFT",
+        "id": 2,
+        "image": "../assets/Store/tshirt-eft.jpg",
+        "name": "Escape From Tarkov T-Shirt",
+        "price": 90,
+        "prodType": "Apparel"
     },
     {
-    "color": "Black",
-    "game": "Star Citizen",
-    "id": 3,
-    "image": "../assets/Store/SC-backpack.jpg",
-    "name": "Star Citizen Backpack",
-    "price": 70,
-    "prodType": "Luggage"
+        "color": "Black",
+        "game": "Star Citizen",
+        "id": 3,
+        "image": "../assets/Store/SC-backpack.jpg",
+        "name": "Star Citizen Backpack",
+        "price": 70,
+        "prodType": "Luggage"
     },
     {
         "color": "Black",

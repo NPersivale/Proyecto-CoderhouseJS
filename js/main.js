@@ -22,7 +22,7 @@ $(`#navbarDropdownMenuLink`).click(function(){
 
 let index1 = 0;
 
-$(`.nav-cart`).ready(()=>{ //CREATES CART STRUCTURE
+$(`.nav-cart`).ready(()=>{ //CREATES CART HTML STRUCTURE
     $(`.shoppingCart`).append(
         `<div class="containerProducts">
             <h1>Shopping Cart:</h1>
@@ -54,20 +54,21 @@ $(`.nav-cart`).ready(()=>{ //CREATES CART STRUCTURE
             <p>Your purchase is on its way!</p>
             <p>Thank you for supporting us.</p>
         </div>
-        <button class="btn" id="okBtn" type="submit" onclick="hidePopup();">Ok</button>
+        <button class="btn" id="okBtn" type="submit">Ok</button>
     </div>
     `
     );
 })
 
-function showPopup() {
+
+function showPopup() { //SHOWS CHECKOUT POPUP
     $("#popUp").before('<div id=grayBack></div>');
     $("#grayBack").css('opacity', 0).fadeTo(300, 0.5, function() {
         $("#popUp").fadeIn(500);
     });
 }
 
-function hidePopup() {
+function hidePopup() { //HIDES CHECKOUT POPUP
     $("#grayBack").fadeOut('fast', function() {
         $(this).remove()
     });
@@ -86,9 +87,26 @@ $(`.nav-cart`).click(()=>{ //TOGGLES SHOPPING CART
         $(`#containerCart`).empty();
         shoppingCart.length = 0;
     })
-
     $(`#checkOut`).click(()=>{
         showPopup();
         console.log("checkout!");
+        $(`#okBtn`).click(()=>{
+            hidePopup();
+        })
     })
 })
+
+
+function removeItem(event){ //DELETES SINGLE ELEMENT FROM SHOPPINGCART
+    const targetId = event.target.id.replace(/[^0-9]/g,''); 
+    if (shoppingCart.some(product => product.id === targetId)) {
+        const chosenProduct = shoppingCart.find(product => product.id === targetId);
+        var index = shoppingCart.indexOf(chosenProduct); //APPLIES SPLICE TO REMOVE FROM ARRAY
+        shoppingCart.splice(index, 1);
+
+        $(`#containerCart`).empty(); //RE-RENDER SHOPPING CART
+        for(product of shoppingCart){
+            renderCart(product);
+        }
+    }
+}
