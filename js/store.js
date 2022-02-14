@@ -58,36 +58,8 @@ function createProduct(products) {
 
 
 // *******************************************************
-// SHOPPING CART FUNCTIONALITY - WIP
+// SHOPPING CART FUNCTIONALITY
 // *******************************************************
-
-// STORAGE BUTTONS - TEMPORAL (TESTING ONLY)
-$(`#recoverBtn`).on('click', getStorage);
-$(`#clearBtn`).on('click', resetStorage);
-$(`#saveBtn`).on('click', setStorage);
-
-
-
-const saveLocally = (key, value) => { localStorage.setItem(key, value) };
-
-function setStorage(){ //STORES CART IN LOCALSTORAGE
-    saveLocally("shoppingCartLocal", JSON.stringify(shoppingCart));
-}
-
-function resetStorage(){ //CLEARS LOCALSTORAGE
-    $(`#containerCart`).empty();
-    localStorage.clear();
-    console.log("localStorage has been cleared!"); //TESTING PURPOSES ONLY
-}
-
-function getStorage(){ //RETRIEVES CART FROM LOCALSTORAGE
-    const storedProducts = JSON.parse(localStorage.getItem("shoppingCartLocal"));
-    const recoveredProducts = [];
-    for (const product of storedProducts){
-        recoveredProducts.push(new shoppingCartProd(product.name, product.price, product.prodType, product.game, product.color));
-    }
-    console.log(recoveredProducts); //TESTING PURPOSES ONLY
-}
 
 function renderCart(product){ // RENDERS CART
     $(`#containerCart`).append(`        
